@@ -1,0 +1,31 @@
+<head>
+	<%= link_to "Log out", sessions_destroy_path, method: :delete %>
+</head>
+
+<h1>Currently play</h1>
+<h3>Movie : <%= @screens.movie.m_name %></h3>
+
+
+
+ <ol>
+<% @screens.customers.each do |ele| %>
+	<li>
+	<%= ele.c_name%>
+	</li>
+<%end%>	
+</ol> 
+
+
+
+<%= form_tag theater_screen_movie_customers_path(screen_id: @screens.id, movie_id: @screens.movie.id, theater_id: @screens.theater.id ) do %>
+	<div>
+		<%= label_tag :Name %>
+		<%= text_field_tag :c_name %>
+
+		<%= submit_tag "Book Your Ticket" %>
+	</div>
+
+<% end %>
+
+<%= link_to "Home",  theaters_path%>
+

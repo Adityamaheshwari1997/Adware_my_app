@@ -1,0 +1,16 @@
+<head>
+	<%= link_to "Log out", sessions_destroy_path, method: :delete %>
+</head>
+
+<h1>Book my show</h1>
+
+<h1>Theaters</h1>
+
+<ul>
+
+	<% @theaters.each do |ele| %>
+	<li>
+		<%= link_to ele.t_name ,theater_path(ele) %>
+	</li>
+	<% end %>
+</ul>
