@@ -1,0 +1,12 @@
+<head>
+	<%= link_to "Log out", sessions_destroy_path, method: :delete %>
+</head>
+<h1>Available Screen</h1>
+<ul>
+	<%@theaters.screens.each do |ele| %>
+	<li>
+		<%= link_to  ele.s_name , theater_screen_path(ele)%>   
+	</li>
+	<% end %>
+</ul>
+<%= link_to "Home",  theaters_path%>
