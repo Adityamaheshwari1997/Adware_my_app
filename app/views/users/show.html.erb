@@ -1,0 +1,7 @@
+<head>
+	<%= link_to "Log out", sessions_destroy_path, method: :delete %>
+</head>
+
+<h1>Your booking is done <%= @user.name %> </h1>
+
+<h3><%=link_to "Want more" , theaters_path %></h3>
