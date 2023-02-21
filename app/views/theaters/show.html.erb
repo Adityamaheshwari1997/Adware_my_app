@@ -3,9 +3,9 @@
 </head>
 <h1>Available Screen</h1>
 <ul>
-	<%@theaters.screens.each do |ele| %>
+	<% @theater.screens.each do |screen| %>
 	<li>
-		<%= link_to  ele.s_name , theater_screen_path(ele)%>   
+		<%= link_to  screen.s_name , theater_screen_path(screen, theater_id: @theater.id)%>   
 	</li>
 	<% end %>
 </ul>

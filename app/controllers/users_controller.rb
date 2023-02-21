@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
@@ -24,14 +24,17 @@ class UsersController < ApplicationController
 
 
   def edit
-    # binding.pry
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
+    @movie =Movie.find(params[:movie_id])
+    @theater = Theater.find(params[:theater_id])
+    @screen = Screen.find(params[:screen_id])
   end
 
   def update
-    # @movie =Movie.find(params[:movie_id])
-    # @theater = Theater.find(params[:theater_id])
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
+
+    binding.pry
+
     if @user.update(cus_params)
       redirect_to screens_index_path
     end
@@ -46,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def cus_params
-      params.permit(:name,:theater_id,:screen_id,:movie_id)
-    end
+    params.require(:user).permit(:name,:theater_id,:screen_id,:movie_id)
+  end
 
 end

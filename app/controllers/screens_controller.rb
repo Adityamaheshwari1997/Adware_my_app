@@ -4,7 +4,8 @@ class ScreensController < ApplicationController
   end
 
   def show
-    @screens = Screen.find(params[:theater_id ])
+    @theater = Theater.find(params[:theater_id ])
+    @screen = Screen.find(params[:id])
   end
 
   def new 

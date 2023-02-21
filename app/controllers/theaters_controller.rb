@@ -4,6 +4,6 @@ class TheatersController < ApplicationController
   end
 
   def show 
-    @theaters = Theater.find(params[:id])
+    @theater = Theater.find(params[:id])
   end
 end
