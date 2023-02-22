@@ -2,18 +2,24 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    # @movie = Movie.find(params[:movie_id])
   end
-  def create 
-
+  
   def new
     @user = User.new
   end
 
+
+  def create 
     @user = User.new(user_param)
-    if@user.save
+    if @user.save
+      
+      flash[:notice] = "Signup Successfully"
       redirect_to sessions_new_path
     else
-      render 'new'
+      flash[:alert] = "Missing Fields"
+      # render 'new'
+      redirect_to users_new_path
     end
   end
 

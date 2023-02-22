@@ -1,12 +1,8 @@
 <%= form_for @user, url: user_path(user_id: current_user.id) do |f| %>
 	<div>
-		<%= f.hidden_field :user_id, value: current_user.id %>
 		<%= f.hidden_field :screen_id, value: @screen.id %>
 		<%= f.hidden_field :movie_id, value: @movie.id %>
 		<%= f.hidden_field :theater_id, value: @theater.id %>
-		<%= f.label :Name %> <br>
-		<%= f.text_field :name %>
-
 
 		<%= f.submit "Book Your Ticket" %>
 	</div>
