@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   has_many :users
-  has_many :customers 
+ 
   belongs_to :screen 
   validates :screen_id, presence: true , uniqueness: true 
   # validate :unique_screen

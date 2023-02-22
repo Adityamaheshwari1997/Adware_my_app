@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   # root 'theaters#index'
   resources :theaters do 
     resources :screens do
-      resources :movies do
-        resources :customers
-      end
+      resources :movies
     end
   end
   resources :users

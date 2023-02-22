@@ -3,7 +3,7 @@ class User < ApplicationRecord
 	has_secure_password
 	validates :password, length: { minimum: 6 } , allow_blank: true
 	
-	# belongs_to :movie , optional: true
-  	# belongs_to :theater ,optional: true
-  	# belongs_to :screen ,optional: true
+	belongs_to :movie , optional: true
+  	belongs_to :theater ,optional: true
+  	belongs_to :screen ,optional: true
 end

@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_param)
     if @user.save
-      
+      log_in @user
       flash[:notice] = "Signup Successfully"
-      redirect_to sessions_new_path
+      redirect_to theaters_path
     else
       flash[:alert] = "Missing Fields"
       # render 'new'
