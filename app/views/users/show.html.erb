@@ -1,8 +1,12 @@
 <head>
+	<div style="text-align:right;">
 	<%= link_to "Log out", sessions_destroy_path, method: :delete %>
+    </div>
 </head>
-
-<h1>Your booking is done </h1>
-<h2>And your booking ID: <%= @user.email %> </h2>
-
-<h3><%=link_to "plan change ??" , theaters_path %></h3>
+<body style="background-color:whitesmoke;">
+	<div>
+		<h1>Your booking is done </h1>
+		<h2>And your booking ID: <%= @user.email %> </h2>
+		<h3><%=link_to "plan change ??" , theaters_path %></h3>
+	</div>
+</body>

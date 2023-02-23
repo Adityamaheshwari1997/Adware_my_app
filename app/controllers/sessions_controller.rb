@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         redirect_to theaters_path
     
     else
-      render 'new'
+      render 'new' ,status: :unprocessable_entity
     end
   end
   

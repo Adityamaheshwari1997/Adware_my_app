@@ -1,10 +1,21 @@
-<%= render "layouts/flash" %>
+<%= render "layouts/flash"%>
 
-<div>
+<head>
+	<%= image_tag("bms.png", alt: "Rails logo"  ,size: "100x50") %>
+</head>
+
+<body style= "background-image: url('/assets/hello.jpg'); background-position: center; background-size: cover;height: 100%;">
+
+<div style="color: white;"> 
+	<div style="text-align: center;">
 	<h1>Welcome To My App</h1>
 	<h2>Book My Show</h2>
-		<h2><%= link_to "Book your Tickets Now!", users_new_path %></h2>
-</div>
+	</div>
+		<h2 style="text-decoration: none;"><%= link_to "Book your Tickets Now!", users_new_path %></h2>
+	
 <%= link_to image_tag("logo.png", alt: "Rails logo"  ,size: "150x150"),'https://humornama.com/meme-templates/buddhi-bahut-tez-hai-tumhari-meme-template/' %>
 
 <p>old user? <%= link_to "login now!", sessions_new_path %></p>
+
+</div>
+</body>

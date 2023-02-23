@@ -1,20 +1,38 @@
 <%= render "layouts/flash" %>
+<body style="background-color:whitesmoke;">
+
+<div style="text-align:center;"> 
 
 <h1>Sign up</h1>
 		<%= form_for @user do |f| %>
 			<%= f.label :email %><br>
-			<%= f.email_field :email %> <br><br>
+			<%= f.email_field :email %> <br>
+
+			
+			<% @user.errors.full_messages_for(:email).each do |message| %>
+      			<div><%= message %></div>
+    				<% end %>
+  				<br>
 
 			<%= f.label :password %><br>
-			<%= f.password_field :password %><br><br>
+			<%= f.password_field :password %><br>
+			<% @user.errors.full_messages_for(:password).each do |message| %>
+      			<div><%= message %></div>
+    				<% end %>
+  				<br>
 
 			<%= f.label :password_confirmation, "Confirmation" %><br>
 			<%= f.password_field :password_confirmation %> <br><br>
+			<% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+      			<div><%= message %></div>
+    				<% end %>
+  				
 			
 			<%= f.submit "Create my account"%>
 			
 		<% end %>
+</div>
 
 <p>old user? <%= link_to "login now!", sessions_new_path %></p>
 <%= link_to "Back", root_path %>
-	
+</body>

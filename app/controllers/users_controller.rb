@@ -17,9 +17,9 @@ class UsersController < ApplicationController
       flash[:notice] = "Signup Successfully"
       redirect_to theaters_path
     else
-      flash[:alert] = "Missing Fields"
-      # render 'new'
-      redirect_to users_new_path
+      # flash[:alert] = "Missing Fields"
+      render 'new',status: :unprocessable_entity
+      # redirect_to users_new_path
     end
   end
 

@@ -1,6 +1,9 @@
 <head>
+	<div style="text-align:right;">
 	<%= link_to "Log out", sessions_destroy_path, method: :delete %>
+    </div>
 </head>
+
 <h1>Available Screen</h1>
 <ul>
 	<% @theater.screens.each do |screen| %>
