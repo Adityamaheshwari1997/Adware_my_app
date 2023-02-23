@@ -6,7 +6,10 @@
 <body style="background-color:whitesmoke;">
 	<div>
 		<h1>Your booking is done </h1>
-		<h2>And your booking ID: <%= @user.email %> </h2>
+		<h2>booking ID: <%= @user.email %></h2>
+		<h3>And your Theater is : <%= @user.theater.t_name %></h3>
+		<h4>And the Movie name: <%= @user.movie.m_name %> Screen: <%= @user.screen.s_name%></h4>
+		
 		<h3><%=link_to "plan change ??" , theaters_path %></h3>
 	</div>
 </body>

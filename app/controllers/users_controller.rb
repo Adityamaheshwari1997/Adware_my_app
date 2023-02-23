@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   
   def show
+    # @theater = Theater.find(params[:theater_id])
+    # @movie = Movie.find(params(:movie_id))
+    # @screen = Screen.find(params(:theater_id))
     @user = User.find(params[:id])
     # @movie = Movie.find(params[:movie_id])
   end
@@ -31,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @user = User.find(params[:user_id])
     if @user.update(cus_params)
       redirect_to user_path(@user)

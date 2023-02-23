@@ -13,7 +13,11 @@ class SessionsController < ApplicationController
         redirect_to theaters_path
     
     else
-      render 'new' ,status: :unprocessable_entity
+      flash[:alert] = "Missing Fields"
+      # render 'new'
+      # render :action => "new.html.erb"
+      
+      redirect_to sessions_new_path
     end
   end
   
